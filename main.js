@@ -5,12 +5,8 @@ initForm();
 
 function initForm() {
   const today = new Date();
-  console.log(new Date().toLocaleString().split(",")[0]);
-  const time =
-    today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
-  document.getElementById("taskDate").value = new Date()
-    .toISOString()
-    .split("T")[0];
+  const time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
+  document.getElementById("taskDate").value = new Date().toISOString().split("T")[0];
   document.getElementById("taskTime").value = time;
 }
 
