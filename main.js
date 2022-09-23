@@ -138,11 +138,15 @@ function createTimesContainer(cardBody, newTask) {
 }
 
 function createTaskButtons(newTask, card) {
+  
   const deleteButton = document.createElement("button");
+  deleteButton.setAttribute("data-toggle", "modal");
+  deleteButton.setAttribute("data-target", "#exampleModal")
   setAttributes(deleteButton, {
     class: "fa fa-trash",
-    onclick: "removeTask(this)",
+    onclick: "removeTask(this)"
   });
+
   const editButton = document.createElement("button");
   setAttributes(editButton, {
     class: "fas fa-edit",
@@ -164,16 +168,20 @@ function createTaskButtons(newTask, card) {
 
 function removeTask(taskElement) {
   const container = document.querySelector("#container");
+  const modalDeleteB = document.querySelector("#modalDeleteB");
   const parentElement = taskElement.parentNode;
   const noteElement = parentElement.parentNode;
-  const confirmation = confirm("Are you sure you want to delete this note?");
-  if (confirmation) {
-    noteElement.style.setProperty("animation", "fadeOut 4s");
-    setTimeout(() => {
-      container.removeChild(noteElement);
-      localStorage.removeItem(noteElement.id);
-    }, 3500);
-  }
+  modalDeleteB.addEventListener('click', () => {
+    removeTaskFromLocal(noteElement, container)
+  })
+}
+
+const removeTaskFromLocal = (noteElement, container) =>{
+  noteElement.style.setProperty("animation", "fadeOut 4s");
+  setTimeout(() => {
+    container.removeChild(noteElement);
+    localStorage.removeItem(noteElement.id);
+  }, 3500);
 }
 
 function editTask(taskElement) {

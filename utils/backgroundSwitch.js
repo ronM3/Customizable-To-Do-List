@@ -1,6 +1,6 @@
-const setAttributes = (el, object) => {
+const setAttributes = (element, object) => {
   for (let key in object) {
-    el.setAttribute(key, object[key]);
+    element.setAttribute(key, object[key]);
   }
 };
 
