@@ -6,7 +6,7 @@ Project is also mobile responsive and dark mode available also using external to
  ![](https://github.com/ronM3/Customizable-To-Do-List/blob/main/todo-list-demo-web.gif)
 
 # Live link
-in process 
+https://customtodo.onrender.com/
 
 # Features
 * User-friendly
