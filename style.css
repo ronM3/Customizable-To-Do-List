@@ -311,6 +311,7 @@ textarea {
   background-color: var(--theme_toogle-background);
   position: absolute;
   border: 1px;
+  display: flex;
   border-bottom-left-radius: 15px;
   border-bottom-right-radius: 15px;
   box-shadow: rgb(0 0 0 / 25%) 0px 54px 55px, rgb(0 0 0 / 34%) 0px -12px 33px,
