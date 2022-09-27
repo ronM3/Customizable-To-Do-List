@@ -515,10 +515,14 @@ span#missingDate {
   position: absolute;
   white-space: pre;
   bottom: -23px;
-  right: -27px;
   font-size: 13px;
   font-weight: 600;
-  background: snow;
+}
+span#missingTime {
+  position: absolute;
+  white-space: pre;
+  top: 2.2rem;
+  left: -1rem;
 }
 .missingTitle {
   border-radius: 16px;

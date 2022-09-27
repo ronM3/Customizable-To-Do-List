@@ -61,6 +61,7 @@ const valiadateForm = (newTask) => {
   let missingTitle = document.getElementById("missingTitle");
   let missingInfo = document.getElementById("missingInfo");
   let missingDate = document.getElementById("missingDate");
+  let missingTime = document.getElementById("missingTime");
 
   const myToast = Toastify({
     text: "You have to choose note",
@@ -80,11 +81,12 @@ const valiadateForm = (newTask) => {
     missingDate.innerHTML = "Task date required";
     return false;
   }
-  missingDate.innerHTML = '<i class="fas fa-check-circle"></i>';
+  missingDate.innerHTML = "";
   if (newTask.task_time === "") {
-    console.log(`${taskTime} is empty`);
+    missingTime.innerHTML = "Task Time required";
     return false;
   }
+  missingTime.innerHTML = "";
   if (!newTask.task_type || newTask.task_type === undefined) {
     myToast.showToast();
     return false;
@@ -264,7 +266,9 @@ function cleanForm() {
   let missingTitle = document.getElementById("missingTitle");
   let missingInfo = document.getElementById("missingInfo");
   let missingDate = document.getElementById("missingDate");
+  let missingTime = document.getElementById("missingTime");
   missingTitle.innerHTML = "";
   missingInfo.innerHTML = "";
   missingDate.innerHTML = "";
+  missingTime.innerHTML = "";
 }
