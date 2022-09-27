@@ -556,7 +556,11 @@ span#missingDate {
   }
 
   .theme_toogle {
-    margin-left: 0;
+    width: 100%;
+    justify-content: center;
+  }
+  #dark_status{
+    font-size: 18px;
   }
 }
 
