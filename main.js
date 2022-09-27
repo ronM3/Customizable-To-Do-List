@@ -134,7 +134,6 @@ function createTimesContainer(cardBody, newTask) {
 }
 
 function createTaskButtons(newTask, card) {
-  
   const deleteButton = document.createElement("button");
   deleteButton.setAttribute("data-toggle", "modal");
   deleteButton.setAttribute("data-target", "#exampleModal")
@@ -172,7 +171,7 @@ function removeTask(taskElement) {
   })
 }
 
-const removeTaskFromLocal = (noteElement, container) =>{
+const removeTaskFromLocal = (noteElement, container) => {
   noteElement.style.setProperty("animation", "fadeOut 4s");
   setTimeout(() => {
     container.removeChild(noteElement);
@@ -185,23 +184,25 @@ function editTask(taskElement) {
   const childElement = taskElement.parentNode;
   const parentElement = childElement.parentElement;
   const cardBody = parentElement.childNodes[1];
-  const cardHeader = cardBody.childNodes[0];
+  const cardTimes = cardBody.childNodes[2];
   const saveButton = firstChild.childNodes[2];
+  let children = parentElement.childNodes;
+  const saveButtonClicked = children[0].childNodes[2].onclick;
   saveButton.style.display = "block";
 
   for (let index = 0; index < cardBody.childNodes.length; index++) {
-    cardBody.childNodes[index].setAttribute("contenteditable", "true");
+    if(cardBody.childNodes[index] !== cardTimes){
+      cardBody.childNodes[index].setAttribute("contenteditable", "true");
+    }
+    preventEnter(cardBody.childNodes[index])
   }
-  preventHeader(cardHeader);
-  let children = parentElement.childNodes;
-  const saveButtonClicked = children[0].childNodes[2].onclick;
   if (saveButtonClicked.onclick) {
     saveTask(parentElement);
   }
   return;
 }
 
-function preventHeader(NoteElement) {
+function preventEnter(NoteElement) {
   NoteElement.addEventListener("keypress", function (e) {
     if (e.key.toLowerCase() === "enter") {
       e.preventDefault();

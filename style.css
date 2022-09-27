@@ -159,16 +159,21 @@ p.ptext:hover {
   overflow-y: auto;
 }
 p.card-text.date_time {
-  color: #d90000;
-  font-weight: 700;
-  margin-top: -1.2rem;
-  margin-left: 1.6rem;
-  display: flex;
-  flex-direction: column;
-  position: absolute;
-  align-items: center;
-  z-index: 100;
-  height: 0;
+    color: #d90000;
+    font-weight: 700;
+    margin-top: -1.2rem;
+    margin-left: 1.6rem;
+    display: flex;
+    align-items: center;
+    word-wrap: normal;
+    overflow: hidden;
+    flex-direction: column;
+    z-index: 100;
+    width: 107px;
+    height: 46px;
+}
+p.card-text.date_time:hover{
+  overflow-x: auto;
 }
 button.fa.fa-trash {
   background: transparent;
