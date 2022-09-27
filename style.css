@@ -250,7 +250,6 @@ textarea {
 
 .normalButton {
   transition: all 0.2s ease, visibility 0s;
-  margin: 0px 4px 0px 0px;
   font-style: normal;
   border-radius: 10px;
   font-weight: 400;
@@ -542,12 +541,12 @@ span#missingDate {
     display: none;
   }
   input#taskTime {
-    font-size: 1.5px;
+    font-size: 2.5px;
     padding: 0;
     height: 20px;
   }
   input#taskDate {
-    font-size: 1.5px;
+    font-size: 10.5px;
     padding: 0;
     height: 20px;
   }
