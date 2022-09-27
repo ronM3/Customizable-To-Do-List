@@ -351,7 +351,7 @@
       bottom: 15,
     };
     var topRightOffsetSize = {
-      top: 15,
+      top: 45,
       bottom: 15,
     };
     var offsetSize = {
