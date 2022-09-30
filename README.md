@@ -15,3 +15,4 @@ https://customtodo.onrender.com/
 * Light/dark mode toggle
 * Local Storage
 * Responsive
+* Dom manipulation
